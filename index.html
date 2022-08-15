@@ -7,6 +7,7 @@
         <title>Coding Quiz</title>
     </head>
     <body>
+        <!-- Header will display the high scores button and will display the timer in seconds -->
         <header>
             <div class="header">
                 <div class="highScore">
@@ -18,6 +19,7 @@
             </div>
         </header>
         <main>
+            <!-- This code shows the user the introduction page of this quiz -->
             <section class="introPage" id="introPage">
                 <div id="intro">
                     <h1>Welcome to the Coding Quiz!</h1>
@@ -28,15 +30,16 @@
                     <button class="button" id="beginButton">Start Quiz</button>
                 </div>
             </section>
+            <!-- This code shows the user the question page, where the page will ask the user questions -->
             <section class="questionPage" id="questionPage">
                 <div>
                     <div>
                         <h2 id="questionPrompt">Question Prompt</h2>
                         <ul>
-                            <li><button class="buttonChoice" id="optionButtonOne" value="a">Button1</button></li>
-                            <li><button class="buttonChoice" id="optionButtonTwo" value="a">Button2</button></li>
-                            <li><button class="buttonChoice" id="optionButtonThree" value="a">Button3</button></li>
-                            <li><button class="buttonChoice" id="optionButtonFour" value="a">Button4</button></li>
+                            <li><button class="buttonOption" id="optionButtonOne" value="1">Button1</button></li>
+                            <li><button class="buttonOption" id="optionButtonTwo" value="2">Button2</button></li>
+                            <li><button class="buttonOption" id="optionButtonThree" value="3">Button3</button></li>
+                            <li><button class="buttonOption" id="optionButtonFour" value="4">Button4</button></li>
                         </ul>
                     </div>
                     <div id="bottomLine">
@@ -44,6 +47,7 @@
                     </div>
                 </div>
             </section>
+            <!-- This page will ask the user to submit the test results with their initials-->
             <section class="submitResults" id="submitResults">
                 <div>
                     <h2 id="endQuiz">All done!</h2>
@@ -54,6 +58,7 @@
                     </p>
                 </div>
             </section>
+            <!-- This page is used to show the user the high scores -->
             <section class="highScorePage" id="highScorePage">
                 <div>
                     <h2>High Scores</h2>
