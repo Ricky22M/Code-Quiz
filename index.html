@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name=" viewport" content="width=device-width, intitial-scale=1"/>
+        <link rel="stylesheet" href="./style.css"/>
+        <title>Coding Quiz</title>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="highScore">
+                    <button id="scores" class="button">View Highscores</button>
+                </div>
+                <div class="timePlacement">
+                    <h4>Time: 60</h4>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="introPage" id="introPage">
+                <div id="intro">
+                    <h1>Welcome to the Coding Quiz!</h1>
+                    <p id="description">
+                        Here we are testing you on your knowledge in coding ranging from 
+                        HTML subjects to JavaScript to general knowledge in coding.
+                    </p>
+                    <button class="button" id="beginButton">Start Quiz</button>
+                </div>
+            </section>
+            <section class="questionPage" id="questionPage">
+                <div>
+                    <div>
+                        <h2 id="questionPrompt">Question Prompt</h2>
+                        <ul>
+                            <li><button class="buttonChoice" id="optionButtonOne" value="a">Button1</button></li>
+                            <li><button class="buttonChoice" id="optionButtonTwo" value="a">Button2</button></li>
+                            <li><button class="buttonChoice" id="optionButtonThree" value="a">Button3</button></li>
+                            <li><button class="buttonChoice" id="optionButtonFour" value="a">Button4</button></li>
+                        </ul>
+                    </div>
+                    <div id="bottomLine">
+                        <p>Correct! / Wrong!</p>
+                    </div>
+                </div>
+            </section>
+            <section class="submitResults" id="submitResults">
+                <div>
+                    <h2 id="endQuiz">All done!</h2>
+                    <p id="userScore">Your final score is </p>
+                    <p>Enter initials
+                        <input id="initials">
+                        <button class="button" id="SubmitButton">Submit</button>
+                    </p>
+                </div>
+            </section>
+            <section class="highScorePage" id="highScorePage">
+                <div>
+                    <h2>High Scores</h2>
+                    <div id="scoreTracker">
+                        <p>Your record</p>
+                    </div>
+                    <div>
+                        <button class="button" id="backButton">Go back</button>
+                        <button class="button" id="clearButton">Clear Highscores</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Thanks For Visiting!</p>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>
