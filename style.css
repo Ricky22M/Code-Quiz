@@ -1,0 +1,38 @@
+* {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+/* Sets "View Highscore" button at the top left of the page and the timer at the top right of the page */
+.header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+main {
+    text-align: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    margin-left:200px;
+    margin-right:200px;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Added flex wrap on the question page to resize if user is on a different sized device */
+.questionPage {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
