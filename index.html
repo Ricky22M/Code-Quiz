@@ -13,9 +13,7 @@
                 <div class="highScore">
                     <button id="scores" class="button">View Highscores</button>
                 </div>
-                <div class="timePlacement">
-                    <h4>Time: 60</h4>
-                </div>
+                <h4 id="timePlacement">Time: 60</h4>
             </div>
         </header>
         <main>
@@ -25,50 +23,43 @@
                     <h1>Welcome to the Coding Quiz!</h1>
                     <p id="description">
                         Here we are testing you on your knowledge in coding ranging from 
-                        HTML subjects to JavaScript to general knowledge in coding.
+                        HTML to JavaScript to general knowledge in coding.
                     </p>
                     <button class="button" id="beginButton">Start Quiz</button>
                 </div>
             </section>
             <!-- This code shows the user the question page, where the page will ask the user questions -->
             <section class="questionPage" id="questionPage">
-                <div>
-                    <div>
-                        <h2 id="questionPrompt">Question Prompt</h2>
-                        <ul>
-                            <li><button class="buttonOption" id="optionButtonOne" value="1">Button1</button></li>
-                            <li><button class="buttonOption" id="optionButtonTwo" value="2">Button2</button></li>
-                            <li><button class="buttonOption" id="optionButtonThree" value="3">Button3</button></li>
-                            <li><button class="buttonOption" id="optionButtonFour" value="4">Button4</button></li>
-                        </ul>
-                    </div>
-                    <div id="bottomLine">
-                        <p>Correct! / Wrong!</p>
-                    </div>
+                <h2 id="questionPrompt">Question Prompt</h2>
+                <ul>
+                    <li><button class="options button" id="optionButtonOne" value="a">Button1</button></li>
+                    <li><button class="options button" id="optionButtonTwo" value="b">Button2</button></li>
+                    <li><button class="options button" id="optionButtonThree" value="c">Button3</button></li>
+                    <li><button class="options button" id="optionButtonFour" value="d">Button4</button></li>
+                </ul>
+                <!-- Shows if the user gets a question correct or incorrect -->
+                <div id="bottomLine">
+                    <p>Correct! / Wrong!</p>
                 </div>
             </section>
-            <!-- This page will ask the user to submit the test results with their initials-->
+            <!-- This page will ask the user to submit the test results with their initials -->
             <section class="submitResults" id="submitResults">
-                <div>
-                    <h2 id="endQuiz">All done!</h2>
-                    <p id="userScore">Your final score is </p>
-                    <p>Enter initials
-                        <input id="initials">
-                        <button class="button" id="SubmitButton">Submit</button>
-                    </p>
-                </div>
+                <h2 id="endQuiz">All done!</h2>
+                <p id="userScore">Your final score is </p>
+                <p>Enter initials
+                    <input id="initials">
+                    <button class="button" id="submitButton">Submit</button>
+                </p>
             </section>
             <!-- This page is used to show the user the high scores -->
             <section class="highScorePage" id="highScorePage">
+                <h2>High Scores</h2>
+                <div id="scoreTracker">
+                    <p>Your record</p>
+                </div>
                 <div>
-                    <h2>High Scores</h2>
-                    <div id="scoreTracker">
-                        <p>Your record</p>
-                    </div>
-                    <div>
-                        <button class="button" id="backButton">Go back</button>
-                        <button class="button" id="clearButton">Clear Highscores</button>
-                    </div>
+                    <button class="button" id="backButton">Go back</button>
+                    <button class="button" id="clearButton">Clear Highscores</button>
                 </div>
             </section>
         </main>
