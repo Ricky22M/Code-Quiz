@@ -29,10 +29,42 @@ footer {
     text-align: center;
 }
 
-/* Added flex wrap on the question page to resize if user is on a different sized device */
+/* Helps the user to resize the page with the question page showing without any errors */
 .questionPage {
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Used to hide all bullet points on all the lists created */
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: baseline;
+    padding-left: 50px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* This is used to hide all the sections in the HTML while using the webpage */
+.questionPage, .submitResults, .highScorePage, #bottomLine {
+    display:none;
+}
+
+/* Used to design the buttons being used */
+.button {
+    background:white;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+  
+.button:hover{
+    background-color:rgb(205, 245, 247);
 }

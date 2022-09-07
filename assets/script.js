@@ -134,3 +134,53 @@ function showQuestionPrompt (n) {
     questionOrder = n;
     // console.log(showQuestionPrompt);
 }
+
+// This code will display the result of the user choice and give a response back to the user showing whether they got the correct or wrong answer below their question options.
+function analyzeAnswer(event) {
+    event.preventDefault();
+    bottomLine.style.display = "block";
+    setTimeout(function () {
+    bottomLine.style.display = 'none';
+    }, 1000);
+    
+    // Used to analyze the question prompt answers
+    if (questionPromptsList[questionOrder].answer == event.target.value) {
+        bottomLine.textContent = "Correct!"; 
+        finalScore = finalScore + 1;
+    } else {
+        secondsRemaining = secondsRemaining - 10;
+        bottomLine.textContent = "Wrong! The correct answer is " + questionPromptsList[questionOrder].answer + " .";
+    }
+    // Leads the user to the next question after answering previous question prompt
+    if (questionOrder < questionPromptsList.length -1 ) {
+        showQuestionPrompt(questionOrder +1);
+    } else {
+        quizDone();
+    }
+    questionAmount++;
+}
+
+// If the user is able to finish answering all of the question prompts, then this code will run and end the quiz session.
+// If the timer ends and the user is in the process of answering the question prompts, then this code will run and will end the quiz session.
+function quizDone() {    
+    questionPage.style.display = "none";
+    scoreBoard.style.display = "block";
+    console.log(scoreBoard);
+    // This shows the user their final score
+    userScore.textContent = "Your final score is :" + finalScore ;
+    // clearInterval(timeInterval06-Server-Side-APIs);  
+    timeRemaining.style.display = "none"; 
+};
+    
+// This will grab local storage keys and values if they are in local storage, if not then a new array will be used to storage the new keys and values from the user
+function endScore() {
+    var presentList = localStorage.getItem("Scores");
+    if (presentList !== null ){
+        newList = JSON.parse(presentList);
+        return newList;
+    } else {
+        newList = [];
+    }
+    return newList;
+};
+
