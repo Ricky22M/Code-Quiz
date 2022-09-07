@@ -152,6 +152,7 @@ function analyzeAnswer(event) {
         bottomLine.textContent = "Wrong! The correct answer is " + questionPromptsList[questionOrder].answer + " .";
     }
     // Leads the user to the next question after answering previous question prompt
+    // Also if the code runs out of questions to give the user, then end the quiz
     if (questionOrder < questionPromptsList.length -1 ) {
         showQuestionPrompt(questionOrder +1);
     } else {
