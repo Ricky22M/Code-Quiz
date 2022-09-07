@@ -239,3 +239,40 @@ beginButton.addEventListener("click", beginQuiz);
 answeredButtons.forEach(function(click){    
     click.addEventListener("click", analyzeAnswer);
 });
+
+// When this button s clicked, it will save the information from the user input and go to next page
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    scoreBoard.style.display = "none";
+    introPage.style.display = "none";
+    highScorePage.style.display = "block";
+    questionPage.style.display = "none";
+    savedUserScore();
+});
+    
+// When clicked, the code will anaylze the scoreboard and see if the rankings are correct
+scores.addEventListener("click", function(event) {
+    event.preventDefault();
+    scoreBoard.style.display = "none";
+    introPage.style.display = "none";
+    highScorePage.style.display = "block";
+    questionPage.style.display = "none";
+    showScore();
+});
+    
+// This button will send the user back to the start of the webpage
+backButton.addEventListener("click",function(event){
+    event.preventDefault();
+    scoreBoard.style.display = "none";
+    introPage.style.display = "block";
+    highScorePage.style.display = "none";
+    questionPage.style.display = "none";
+    location.reload();
+});
+    
+// After this button is clicked, the code will run and will delete local storage keys and values while also deleting the text displayed in the scoreboard from local storage
+clearButton.addEventListener("click",function(event) {
+    event.preventDefault();
+    localStorage.clear();
+    showScore();
+});
