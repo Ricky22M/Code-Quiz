@@ -184,3 +184,58 @@ function endScore() {
     return newList;
 };
 
+// applies score to the score board
+function showScore() {
+    scoreTracker.innerHTML = "";
+    scoreTracker.style.display ="block";
+    var topScores = filterRankings();   
+    // This code will run by  showing only the top three scores at the scoreboard section 
+    var topThree = topScores.slice(0,3);
+    for (var i = 0; i < topThree.length; i++) {
+        var item = topThree[i];
+        // This will apply the scores on the scoreboard
+        var li = document.createElement("li");
+        li.textContent = item.user + " - " + item.score;
+        li.setAttribute("data-index", i);
+        scoreTracker.appendChild(li);
+    }
+};
+    
+// This function will filter the scores and rankings on the highscore scoreboard
+function filterRankings() {
+    var unfilteredList = endScore();
+    if (endScore == null ){
+        return;
+    } else{
+        unfilteredList.sort(function(a,b){
+            return b.score - a.score;
+        })
+        return unfilteredList;
+    }
+};
+    
+// These functions will allow the user to save their initials and scores into their local storage
+function addNewKey (n) {
+    var addedNewKeyList = endScore();
+    addedNewKeyList.push(n);
+    localStorage.setItem("Scores", JSON.stringify(addedNewKeyList));
+};
+    
+function savedUserScore () {
+    var localUserScore = {
+        user: userInitials.value,
+        score: finalScore
+    }
+    addNewKey(localUserScore);
+    showScore();
+}
+
+/* Declared Event Listeners */
+
+// When beginButton is clicked, the quiz will begin for the user
+beginButton.addEventListener("click", beginQuiz);
+    
+// When the user clicks on any of the answer options button, then the user will go onto the next question prompt
+answeredButtons.forEach(function(click){    
+    click.addEventListener("click", analyzeAnswer);
+});
